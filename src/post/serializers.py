@@ -4,24 +4,17 @@ from .models import *
 class PostalItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostalItem
+        fields = '__all__'
 
 class LetterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Letter
+        fields = '__all__'
 
 class ParcelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Parcel
-
-# class MangaQuerySerializer(serializers.Serializer):
-#     name = serializers.CharField(required=False,help_text="имя записи")
-#     status = serializers.CharField(required=False,help_text="статус")
-#     description = serializers.CharField(required=False,help_text="описание")
-#     start_date = serializers.CharField(required=False,help_text="Дата начало периодa (10.10.2023)")
-#     end_date = serializers.CharField(required=False,help_text="Дата начало периодa (10.10.2023)")
-
-
-
+        fields = '__all__'
 
 
 

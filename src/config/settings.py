@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
 }
@@ -104,13 +103,6 @@ LOGGING = {
             'filename': 'log.log',
             'formatter': 'errorformatter'
         },
-        'db': {
-            'level': 'INFO',
-            "class": "applogger.handlers.DBHandler",
-            "model": "applogger.models.LogEntry",
-            "expiry": 86400,
-            "formatter": "only_message",
-        },
     },
     'loggers': {
         'jobs': {
@@ -120,7 +112,7 @@ LOGGING = {
 
         },
         'core': {
-            'handlers': ['file', 'db'],
+            'handlers': ['file',],
             'level': 'INFO',
             'propagate': True,
         },
